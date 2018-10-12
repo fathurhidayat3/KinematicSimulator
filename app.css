@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  background-color: #444;
+}
+
+input[type=text],
+input[type=color] {
+  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  text-align: right;
+
+  width: 80px;
+  margin: 0 10px;
+  padding: 5px 10px;
+  vertical-align: middle;
+
+  color: #333;
+}
+input[type=text].small {
+  width: 30px;
+}
+
+input[type=color] {
+  width: 40px;
+  padding: 0;
+  
+  cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+hr {
+  margin: 15px 0;
+  border: 1px solid darkorange;
+  border-style: dashed;
+
+  border-radius: 4px;
+}
+
+.object-area {
+  flex-grow: 1;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: transparent;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+  background-size: 30px 30px;
+}
+.input-area {
+  width: 350px;
+  padding: 20px;
+  background: #333;
+  z-index: 2;
+
+  overflow-y: auto;
+}
+
+.input-item {
+  margin-bottom: 20px;
+}
+.input-item label {
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding-bottom: 4px;
+  font-size: 14px;
+  color: white;
+}
+.input-item .input-section {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.draggable-div {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: .6;
+  z-index: 1;
+
+  cursor: move;
+}
+.draggable-div:hover {
+  /* border: 4px solid #333; */
+  opacity: 1;
+}
+
+.button {
+  background: darkorange;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 15px;
+  cursor: pointer;
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button.button--red {
+  background: crimson;
+}
+.button.button--green {
+  background: lightgreen;
+}
+.button.button--violet {
+  background: blueviolet;
+}
+
+.console {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  height: 100px;
+  width: 100%;
+  background: #222222;
+
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.console label {
+  font-weight: bold;
+}
+.console label,
+.console .log-data {
+  font-family: monospace;
+}
+.console .log-data {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.float-left { float: left; }
+.float-right { float: right; }

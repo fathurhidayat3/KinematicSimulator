@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kinematic Simulator</title>
+
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+  <section class="object-area">
+    <div class="draggable-div" id="div1" style="background: crimson; top: 175px; left: 450px;"></div>
+    <div class="draggable-div" id="div2" style="background: cornflowerblue; top: 325px; left: 450px;"></div>
+    <div class="draggable-div" id="div3" style="background: lightgreen; top: 325px; left: 600px;"></div>
+    <div class="draggable-div" id="div4" style="background: orchid; top: 175px; left: 600px;"></div>
+
+    <svg id="line" height="100%" width="100%">
+      <line data-from="div1" data-to="div2" style="stroke:darkorange;stroke-width:2" />
+      <line data-from="div2" data-to="div3" style="stroke:darkorange;stroke-width:2" />
+      <line data-from="div3" data-to="div4" style="stroke:darkorange;stroke-width:2" />
+
+      Sorry, your browser does not support inline SVG.
+    </svg>
+  </section>
+
+  <section class="input-area">
+    <h3 class="title">Setting</h3>
+
+    <div class="input-item">
+      <label style="border-bottom: 2px solid crimson;">Set Center Point 1</label>
+      <div class="input-section" data-for="div1">
+        x : <input class="small" type="text" placeholder="x">
+        y : <input class="small" type="text" placeholder="y">
+      </div>
+    </div>
+
+    <div class="input-item">
+      <label style="border-bottom: 2px solid cornflowerblue;">Set Center Point 2</label>
+      <div class="input-section" data-for="div2">
+        x : <input class="small" type="text" placeholder="x">
+        y : <input class="small" type="text" placeholder="y">
+      </div>
+    </div>
+
+    <div class="input-item">
+      <label style="border-bottom: 2px solid lightgreen;">Set Center Point 3</label>
+      <div class="input-section" data-for="div3">
+        x : <input class="small" type="text" placeholder="x">
+        y : <input class="small" type="text" placeholder="y">
+      </div>
+    </div>
+
+    <div class="input-item">
+      <label style="border-bottom: 2px solid orchid;">Set Center Point 4</label>
+      <div class="input-section" data-for="div4">
+        x : <input class="small" type="text" placeholder="x">
+        y : <input class="small" type="text" placeholder="y">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="input-item">
+      <label>Simulate movement</label>
+      <div class="input-section">
+        x : <input class="small" id="input-deg-x" type="text" placeholder="x">
+        y : <input class="small" id="input-deg-y" type="text" placeholder="y">
+        <button class="button button--violet float-right" id="btn-run">RUN</button>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- <div class="input-item">
+      <label>Add Item</label>
+      <div class="input-section">
+        color : <input id="input-item" type="color" placeholder="Hex value">
+        <button class="button button--violet float-right" id="btn-add-item">ADD</button>
+      </div>
+    </div>
+
+    <hr> -->
+
+    <button class="button button--red float-right" id="btn-reset">RESET</button>
+
+  </section>
+
+  <!-- <div class="console">
+    <label>log :</label>
+    <p class="log-data">
+      ayaya
+    </p>
+  </div> -->
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
