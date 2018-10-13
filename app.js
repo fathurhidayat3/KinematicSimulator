@@ -189,6 +189,28 @@ function lineChecker(elmnt) {
       dataLine = distanceCalc(moveLine(line, i));
       document.querySelector(`[data-line="${line.children[i].id}"]`).value = dataLine.distance;
     }
+
+    let dataLineA = document.querySelector(`[data-line-a="${line.children[i].id}"]`);
+    let dataLineB = document.querySelector(`[data-line-b="${line.children[i].id}"]`);
+
+    // if (dataLineA && dataLineA.getAttribute("data-line-a") == line.children[i].id) {
+    //   // console.log(document.querySelector(`[data-line="${line.children[i].id}"]`).value);
+    //   if(dataLineA && dataLineB) {
+    //     dataLineA.value = 11;
+    //     dataLineB.value = 10;
+  
+    //     console.log('dari a ' + dataLineA.value + dataLineB.value);
+    //   }
+    // }
+
+    // if (dataLineB && dataLineB.getAttribute("data-line-b") == line.children[i].id) {
+    //   if(dataLineA && dataLineB) {
+    //     dataLineA.value = dataLine.distance;
+    //     dataLineB.value = 10;
+  
+    //     console.log('dari b ' + dataLineA.value + dataLineB.value);
+    //   }
+    // }
   }
 }
 
@@ -200,6 +222,6 @@ function distanceCalc(moveObj) {
   return { lineId: moveObj.selectLine.id, distance: distance };
 }
 
-function tetaCalc() {
-
+function tetaCalc(dataLine) {
+  console.log(dataLine);
 }

@@ -12,15 +12,15 @@
 
 <body>
   <section class="object-area">
-    <div class="draggable-div" id="div1" style="background: crimson; top: 175px; left: 450px;"></div>
-    <div class="draggable-div" id="div2" style="background: cornflowerblue; top: 325px; left: 450px;"></div>
-    <div class="draggable-div" id="div3" style="background: lightgreen; top: 325px; left: 600px;"></div>
-    <!-- <div class="draggable-div" id="div4" style="background: orchid; top: 175px; left: 600px;"></div> -->
+    <div class="draggable-div" id="div1" style="background: crimson; top: 325px; left: 450px;"></div>
+    <div class="draggable-div" id="div2" style="background: cornflowerblue; top: 175px; left: 450px;"></div>
+    <div class="draggable-div" id="div3" style="background: lightgreen; top: 175px; left: 600px;"></div>
+    <!-- <div class="draggable-div" id="div4" style="background: orchid; top: 325px; left: 600px;"></div> -->
 
     <svg id="line" height="100%" width="100%">
       <line id="line1" data-from="div1" data-to="div2" style="stroke:darkorange;stroke-width:2" />
       <line id="line2" data-from="div2" data-to="div3" style="stroke:darkorange;stroke-width:2" />
-      <!-- <line data-from="div3" data-to="div4" style="stroke:darkorange;stroke-width:2" /> -->
+      <!-- <line id="line3" data-from="div3" data-to="div4" style="stroke:darkorange;stroke-width:2" /> -->
 
       Sorry, your browser does not support inline SVG.
     </svg>
@@ -64,19 +64,38 @@
     <hr>
 
     <div class="input-item">
-      <label>Line Distance</label>
+      <label>Line 1 ( <span class="bullet-from" style="color:crimson">&bull;</span> - <span class="bullet-to" style="color:cornflowerblue">&bull;</span> )</label>
       <div class="input-section">
-        line1 : <input class="small" data-line="line1" type="text" placeholder="">
-        line2 : <input class="small" data-line="line2" type="text" placeholder="">
+        distance : <input class="small" data-line="line1" type="text" placeholder="" readonly>
       </div>
     </div>
 
+    <div class="input-item">
+      <label>Line 2 ( <span class="bullet-from" style="color:cornflowerblue">&bull;</span> - <span class="bullet-to" style="color:lightgreen">&bull;</span> )</label>
+      <div class="input-section">
+        distance : <input class="small" data-line="line2" type="text" placeholder="" readonly>
+      </div>
+    </div>
+
+    <!-- <div class="input-item">
+      <label>Line 3 ( <span class="bullet-from" style="color:lightgreen">&bull;</span> - <span class="bullet-to" style="color:orchid">&bull;</span> )</label>
+      <div class="input-section">
+        distance : <input class="small" data-line="line3" type="text" placeholder="" readonly>
+      </div>
+    </div> -->
     <hr>
 
     <div class="input-item">
-      <label>Joint Angle</label>
+      <label>Joint Angle Θ1 ( <span class="bullet-teta" style="color:crimson">&bull;</span> )</label>
       <div class="input-section">
-        Θ1 : <input class="small" data-line="teta1" type="text" placeholder="deg">
+        deg : <input class="small" data-line-a="base" data-line-b="line1" type="text" placeholder="deg">
+      </div>
+    </div>
+
+    <div class="input-item">
+      <label>Joint Angle Θ2 ( <span class="bullet-teta" style="color:cornflowerblue">&bull;</span> )</label>
+      <div class="input-section">
+        deg : <input class="small" data-line-a="line1" data-line-b="line2" type="text" placeholder="deg">
       </div>
     </div>
 
@@ -103,7 +122,7 @@
 
     <hr> -->
 
-    <button class="button button--red float-right mb20" id="btn-reset">RESET</button>
+    <button class="button button--red float-right mt10 mb10" id="btn-reset">RESET</button>
 
   </section>
 

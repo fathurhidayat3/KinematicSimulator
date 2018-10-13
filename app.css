@@ -29,7 +29,7 @@ input[type=color] {
   color: #333;
 }
 input[type=text].small {
-  width: 30px;
+  width: 35px;
 }
 input[type=text].disabled {
   background: #bbb;
@@ -45,9 +45,12 @@ input[type=color] {
 input[type="color"]::-webkit-color-swatch {
 	border: none;
 }
+input[readonly] {
+  cursor: not-allowed;
+}
 
 hr {
-  margin: 20px 0;
+  margin: 15px 0;
   border: 1px solid darkorange;
   border-style: dashed;
 
@@ -73,7 +76,7 @@ hr {
 }
 
 .input-item {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .input-item label {
   margin-bottom: 10px;
@@ -109,7 +112,7 @@ hr {
   outline: none;
   border: none;
   border-radius: 4px;
-  padding: 6px 15px;
+  padding: 5.5px 15px;
   cursor: pointer;
 }
 .button:active {
@@ -155,10 +158,13 @@ hr {
 }
 
 .title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .float-left { float: left; }
 .float-right { float: right; }
 
-.mb20 { margin-bottom: 20px; }
+.mbt10 { margin-top: 10px; } .mt15 { margin-top: 15px; } .mt20 { margin-top: 20px; } .mt30 { margin-top: 30px; }
+.mb10 { margin-bottom: 10px; } .mb15 { margin-bottom: 15px; } .mb20 { margin-bottom: 20px; } .mb30 { margin-bottom: 30px; }
+
+.disp-block { display: block; }
