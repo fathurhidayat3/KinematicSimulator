@@ -31,6 +31,10 @@ input[type=color] {
 input[type=text].small {
   width: 30px;
 }
+input[type=text].disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
 
 input[type=color] {
   width: 40px;
@@ -43,7 +47,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 hr {
-  margin: 15px 0;
+  margin: 20px 0;
   border: 1px solid darkorange;
   border-style: dashed;
 
@@ -120,6 +124,10 @@ hr {
 .button.button--violet {
   background: blueviolet;
 }
+.button.disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
 
 .console {
   position: fixed;
@@ -152,3 +160,5 @@ hr {
 
 .float-left { float: left; }
 .float-right { float: right; }
+
+.mb20 { margin-bottom: 20px; }

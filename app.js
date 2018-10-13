@@ -9,7 +9,6 @@ var simX = document.getElementById("input-deg-x");
 var simY = document.getElementById("input-deg-y");
 
 var initElements = [];
-
 var elCount = 0;
 
 (function () {
@@ -37,26 +36,34 @@ btnRun.onclick = function () {
   var curX = parseInt(dragDiv[elCount].style.left.split('px')[0]);
   var curY = parseInt(dragDiv[elCount].style.top.split('px')[0]);
 
+  simX.disabled = true; simX.classList.add('disabled');
+  simY.disabled = true; simY.classList.add('disabled');
+  btnRun.disabled = true; btnRun.classList.add('disabled');
+
   var id = setInterval(simMovement, 5);
   function simMovement() {
     if (curX == simX.value && curY == simY.value) {
       clearInterval(id);
-    } 
-    
-    if(curX < simX.value) {
+
+      simX.disabled = false; simX.classList.remove('disabled');
+      simY.disabled = false; simY.classList.remove('disabled');
+      btnRun.disabled = false; btnRun.classList.remove('disabled');
+    }
+
+    if (curX < simX.value) {
       dragDiv[elCount].style.left = parseInt(curX++) + "px";
       lineChecker(dragDiv[elCount]);
     }
-    else if(curX > simX.value) {
+    else if (curX > simX.value) {
       dragDiv[elCount].style.left = parseInt(curX--) + "px";
       lineChecker(dragDiv[elCount]);
     }
 
-    if(curY < simY.value) {
+    if (curY < simY.value) {
       dragDiv[elCount].style.top = parseInt(curY++) + "px";
       lineChecker(dragDiv[elCount]);
     }
-    else if(curY > simY.value) {
+    else if (curY > simY.value) {
       dragDiv[elCount].style.top = parseInt(curY--) + "px";
       lineChecker(dragDiv[elCount]);
     }
@@ -156,8 +163,11 @@ function moveLine(line, lineIndex) {
   let centerLX2 = divTo.offsetLeft + divTo.offsetWidth / 2;
   let centerLY2 = divTo.offsetTop + divTo.offsetHeight / 2;
 
-  insertCoordinate(line.children[lineIndex],
-    { x1: centerLX1, y1: centerLY1, x2: centerLX2, y2: centerLY2 });
+  let coordinates = { x1: centerLX1, y1: centerLY1, x2: centerLX2, y2: centerLY2 };
+
+  insertCoordinate(line.children[lineIndex], coordinates);
+
+  return { selectLine: selectLine, coordinates: coordinates };
 }
 
 function insertCoordinate(lineItem, arr) {
@@ -168,13 +178,28 @@ function insertCoordinate(lineItem, arr) {
 
 function lineChecker(elmnt) {
   let elId = elmnt.getAttribute("id");
+  var dataLine = {};
 
   for (let i = 0; i < line.childElementCount; i++) {
     if (line.children[i].getAttribute("data-from") == elId) {
-      moveLine(line, i);
+      dataLine = distanceCalc(moveLine(line, i));
+      document.querySelector(`[data-line="${line.children[i].id}"]`).value = dataLine.distance;
     }
     else if (line.children[i].getAttribute("data-to") == elId) {
-      moveLine(line, i);
+      dataLine = distanceCalc(moveLine(line, i));
+      document.querySelector(`[data-line="${line.children[i].id}"]`).value = dataLine.distance;
     }
   }
+}
+
+function distanceCalc(moveObj) {
+  let xDelta = moveObj.coordinates.x2 - moveObj.coordinates.x1;
+  let yDelta = moveObj.coordinates.y2 - moveObj.coordinates.y1;
+  distance = Math.round(Math.sqrt(Math.pow(xDelta, 2) + Math.pow(yDelta, 2))) / 100;
+
+  return { lineId: moveObj.selectLine.id, distance: distance };
+}
+
+function tetaCalc() {
+
 }
