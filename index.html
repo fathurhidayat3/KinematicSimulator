@@ -12,9 +12,9 @@
 
 <body>
   <section class="object-area">
-    <div class="draggable-div" id="div1" style="background: crimson; top: 325px; left: 450px;"></div>
-    <div class="draggable-div" id="div2" style="background: cornflowerblue; top: 175px; left: 450px;"></div>
-    <div class="draggable-div" id="div3" style="background: lightgreen; top: 175px; left: 600px;"></div>
+    <div class="draggable-div" id="div1" style="background: crimson; top: 275px; left: 500px;"></div>
+    <div class="draggable-div" id="div2" style="background: cornflowerblue; top: 275px; left: 650px;"></div>
+    <div class="draggable-div" id="div3" style="background: lightgreen; top: 275px; left: 800px;"></div>
     <!-- <div class="draggable-div" id="div4" style="background: orchid; top: 325px; left: 600px;"></div> -->
 
     <svg id="line" height="100%" width="100%">
@@ -64,7 +64,8 @@
     <hr>
 
     <div class="input-item">
-      <label>Line 1 ( <span class="bullet-from" style="color:crimson">&bull;</span> - <span class="bullet-to" style="color:cornflowerblue">&bull;</span> )</label>
+      <label>Line 1 ( <span class="bullet-from" style="color:crimson">&bull;</span> - <span class="bullet-to" style="color:cornflowerblue">&bull;</span>
+        )</label>
       <div class="input-section">
         distance : <input class="small" data-line="line1" type="text" placeholder="" readonly>
       </div>
@@ -88,21 +89,23 @@
     <div class="input-item">
       <label>Joint Angle Θ1 ( <span class="bullet-teta" style="color:crimson">&bull;</span> )</label>
       <div class="input-section">
-        deg : <input class="small" data-line-a="base" data-line-b="line1" type="text" placeholder="deg">
+        deg : <input class="small" id="teta1" type="text" placeholder="deg">
+        <!-- <button class="button button--violet float-right" id="btn-fwd-run">RUN</button> -->
       </div>
     </div>
 
     <div class="input-item">
       <label>Joint Angle Θ2 ( <span class="bullet-teta" style="color:cornflowerblue">&bull;</span> )</label>
       <div class="input-section">
-        deg : <input class="small" data-line-a="line1" data-line-b="line2" type="text" placeholder="deg">
+        deg : <input class="small" id="teta2" type="text" placeholder="deg">
+        <button class="button button--violet float-right" id="btn-fwd-run">RUN</button>
       </div>
     </div>
 
     <hr>
 
     <div class="input-item">
-      <label>Simulate Movement</label>
+      <label>End of Effector (EoE)</label>
       <div class="input-section">
         x : <input class="small" id="input-deg-x" type="text" placeholder="x">
         y : <input class="small" id="input-deg-y" type="text" placeholder="y">
