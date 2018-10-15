@@ -85,7 +85,7 @@ btnFwdRun.onclick = function () {
     let teta = parseInt(document.getElementById(`teta${elCount}`).value);
     let length = parseInt(document.querySelector(`[data-line='line${elCount}']`).value);
 
-    let mov = setInterval(simMovement, 5);
+    let mov = setInterval(simMovement, 10);
 
     function simMovement() {
       if (count == teta) {
@@ -113,7 +113,7 @@ btnFwdRun.onclick = function () {
     // if (teta2 >= teta1) teta = teta2; 
     // else teta = teta1;
 
-    if (teta2 == 0 || teta1 == 0) {
+    if ((teta2 == 0 || teta1 == 0) && (count2 != 0 || count1 != 0) ) {
       if (count2 > count1) teta = count2;
       else teta = count1;
     }
@@ -122,7 +122,7 @@ btnFwdRun.onclick = function () {
       else teta = teta1;
     }
 
-    var mov = setInterval(simMovement, 5);
+    var mov = setInterval(simMovement, 10);
 
     function simMovement() {
       if (count == teta) {
