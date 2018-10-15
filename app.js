@@ -13,7 +13,14 @@ var initElements = [];
 var elCount = 0;
 
 (function () {
+  let objectArea = document.querySelector(".object-area");
+  let objectAreaX = parseInt(objectArea.clientWidth) / 2;
+  let objectAreaY = parseInt(objectArea.clientHeight) / 2;
+
   for (let i = 0; i < dragDiv.length; i++) {
+    dragDiv[i].style.left = objectAreaX + (i*150) + 'px';
+    dragDiv[i].style.top = objectAreaY + 'px';
+
     let curObj = {
       dragDiv: dragDiv[i],
       inputX: document.querySelector(`[data-for="${dragDiv[i].id}"]`).children[0],
@@ -110,19 +117,18 @@ btnFwdRun.onclick = function () {
     let length2 = parseInt(document.querySelector(`[data-line='line${elCount}']`).value);
     let length1 = parseInt(document.querySelector(`[data-line='line${elCount - 1}']`).value);
 
-    // if (teta2 >= teta1) teta = teta2; 
-    // else teta = teta1;
-
-    if ((teta2 == 0 || teta1 == 0) && (count2 != 0 || count1 != 0) ) {
-      if (count2 > count1) teta = count2;
-      else teta = count1;
-    }
-    else {
+    if ((teta2 != 0 || teta1 != 0) && (count2 == 0 || count1 == 0)) {
       if (teta2 >= teta1) teta = teta2;
       else teta = teta1;
     }
+    else {
+      if (count2 > count1) teta = count2;
+      else teta = count1;
+    }
 
     var mov = setInterval(simMovement, 10);
+
+    // console.log(teta1, teta2, count1, count2);
 
     function simMovement() {
       if (count == teta) {
